@@ -1,10 +1,19 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:local_session_timeout/local_session_timeout.dart';
 import 'package:pras_flutter/feature/calculator.dart';
 import 'package:pras_flutter/feature/addContact.dart';
 import 'package:pras_flutter/feature/contactsList.dart';
+import 'package:pras_flutter/feature/expandableField.dart';
 import 'package:pras_flutter/constants.dart' as cons;
 
 class HomePage extends StatefulWidget {
+
+  const HomePage({
+    super.key,
+  });
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -72,6 +81,21 @@ class _HomePageState extends State<HomePage> {
                           foregroundColor: Colors.black38,
                         ),
                         child: Text(cons.MENU.CONTACTS_LIST_PAGE)),
+                    ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return MyExpandableTextField();
+                              },
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white70,
+                          foregroundColor: Colors.black38,
+                        ),
+                        child: Text(cons.MENU.EXPANDABLE_FIELD_PAGE)),
                   ],
                 ),
               )
