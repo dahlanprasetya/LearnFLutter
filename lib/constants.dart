@@ -8,6 +8,7 @@ NavigatorState get global_navigator => global_navigatorKey.currentState!;
 final global_sessionStateStream = StreamController<SessionState>();
 
 late bool isLogin = false;
+late bool checkConflict = true;
 
 class MENU {
   // add a private constructor to prevent this class being instantiated
