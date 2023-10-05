@@ -9,6 +9,7 @@ final global_sessionStateStream = StreamController<SessionState>();
 
 late bool isLogin = false;
 late bool checkConflict = false;
+late bool addConflict = false;
 
 class MENU {
   // add a private constructor to prevent this class being instantiated
