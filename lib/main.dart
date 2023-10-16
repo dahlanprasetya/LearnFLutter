@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pras_flutter/constants.dart';
 import 'package:pras_flutter/feature/auth.dart';
 import 'package:local_session_timeout/local_session_timeout.dart';
+import 'package:pras_flutter/feature/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     final sessionConfig = SessionConfig(
         invalidateSessionForAppLostFocus: const Duration(seconds: 0),
-        invalidateSessionForUserInactivity: const Duration(seconds: 5));
+        invalidateSessionForUserInactivity: const Duration(minutes: 30));
 
     sessionConfig.stream.listen((SessionTimeoutState timeoutEvent) {
       // stop listening, as user will already be in auth page
@@ -44,14 +45,17 @@ class _MyAppState extends State<MyApp> {
       sessionConfig: sessionConfig,
       sessionStateStream: global_sessionStateStream.stream,
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        navigatorKey: global_navigatorKey,
-        // title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.red,
-        ),
-        home: AuthPage(),
-      ),
+          debugShowCheckedModeBanner: false,
+          navigatorKey: global_navigatorKey,
+          // title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.red,
+          ),
+          initialRoute: '/',
+          routes: {
+            '/': (context) => AuthPage(),
+            '/home': (context) => HomePage(),
+          }),
     );
   }
 }
