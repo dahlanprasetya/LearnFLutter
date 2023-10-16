@@ -66,7 +66,7 @@ class _ContactsListState extends State<ContactsList> {
           IconButton(
             icon: Icon(Icons.home),
             onPressed: () {
-              Navigator.pushNamed(context, '/');
+              Navigator.pushNamed(context, '/home');
             },
           ),
         ],
