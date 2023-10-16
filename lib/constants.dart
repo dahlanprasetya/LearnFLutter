@@ -63,3 +63,5 @@ void getOutOfApp() {
     MoveToBackground.moveTaskToBack();
   }
 }
+
+late String globalValue = "";
