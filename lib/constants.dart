@@ -66,3 +66,4 @@ void getOutOfApp() {
 
 late String globalValue = "";
 late String testNewBranchFeatures = "wow";
+late String testNewBranchFeatures2 = "wow212";
