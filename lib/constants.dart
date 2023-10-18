@@ -65,3 +65,5 @@ void getOutOfApp() {
 }
 
 late String globalValue = "";
+late String globalValue1 = "";
+late String globalValue2 = "";
