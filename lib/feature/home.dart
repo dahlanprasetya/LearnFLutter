@@ -4,9 +4,10 @@ import 'package:pras_flutter/feature/calculator.dart';
 import 'package:pras_flutter/feature/addContact.dart';
 import 'package:pras_flutter/feature/confirmationDialog.dart';
 import 'package:pras_flutter/feature/contactsList.dart';
+import 'package:pras_flutter/feature/durationSetting.dart';
 import 'package:pras_flutter/feature/expandableField.dart';
 import 'package:pras_flutter/constants.dart' as cons;
-import 'package:pras_flutter/feature/newsPage.dart';
+import 'package:restart_app/restart_app.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -136,10 +137,17 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => NewsPage()),
+                            MaterialPageRoute(
+                                builder: (context) => DurationSetting()),
                           );
                         },
-                        child: Text('Show News'),
+                        child: Text('Set Duration'),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Restart.restartApp();
+                        },
+                        child: Text('Restart App'),
                       )
                     ],
                   ),
